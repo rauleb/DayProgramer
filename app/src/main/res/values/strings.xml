@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">DayProgramer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string-array name="dias_semana">
+        <item>lunes</item>
+        <item>martes</item>
+        <item>miercoles</item>
+        <item>jueves</item>
+        <item>viernes</item>
+        <item>sabado</item>
+        <item>domingo</item>
+    </string-array>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>
