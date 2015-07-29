@@ -17,6 +17,7 @@ import py.com.bellbird.dayprogramer.R;
 public class MyFragment extends Fragment {
 
     private TextView textView;
+    private String[] tabs;
 
     public static MyFragment getInstance(int position) {
         MyFragment myFragment = new MyFragment();
@@ -33,7 +34,8 @@ public class MyFragment extends Fragment {
         textView = (TextView) layout.findViewById(R.id.position);
         Bundle bundle = getArguments();
         if (bundle != null)
-            textView.setText("La pagina es " + bundle.getInt("position"));
+            tabs=getResources().getStringArray(R.array.dias_semana);
+            textView.setText(tabs[bundle.getInt("position")]);
         return layout;
     }
 }
