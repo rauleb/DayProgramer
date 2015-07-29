@@ -1,16 +1,41 @@
-package py.com.bellbird.dayprogramer;
+package py.com.bellbird.dayprogramer.Activity;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import py.com.bellbird.dayprogramer.Adapters.MyPagerAdapter;
+import py.com.bellbird.dayprogramer.R;
+import py.com.bellbird.dayprogramer.Tabs.SlidingTabLayout;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
+    private SlidingTabLayout mTabs;
+    private ViewPager mPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Agregamos el toolbar
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        //noinspection ConstantConditions
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        mPager = (ViewPager)findViewById(R.id.pager);
+        mPager.setAdapter(new MyPagerAdapter(getApplicationContext(),getSupportFragmentManager()));
+
+        mTabs = (SlidingTabLayout)findViewById(R.id.tabs);
+        mTabs.setViewPager(mPager);
+
     }
 
     @Override
